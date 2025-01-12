@@ -52,9 +52,21 @@
             color: white;
         }
 
-        .contact {
+        .contact-button {
             background-color: blue;
             color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px; /* Αφήνει απόσταση από την εικόνα */
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.1);
         }
 
         .image-container {
@@ -104,6 +116,6 @@
         <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67849fd3&is=67834e53&hm=b8598baf9a48699811a5db6c3aa2a2ab71fd655e61a22c7fbc70cd0acf10ba1b&" alt="DOBAROS LOGO">
     </div>
 
-    <button type="button" onclick="alert('totikogame@gmail.com')">ΕΠΙΚΟΙΝΩΝΙΑ</button>
+    <button class="contact-button" onclick="alert('totikogame@gmail.com')">ΕΠΙΚΟΙΝΩΝΙΑ</button>
 </body>
 </html>
