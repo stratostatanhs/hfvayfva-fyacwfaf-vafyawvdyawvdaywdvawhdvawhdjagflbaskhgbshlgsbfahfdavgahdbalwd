@@ -52,8 +52,14 @@
             color: white;
         }
 
-        img {
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-top: 20px;
+        }
+
+        img {
             width: 100%;
             max-width: 1920px;
             height: auto;
@@ -81,7 +87,7 @@
     </style>
 </head>
 <body>
-    <h1>DOBAROS SITE test</h1>
+    <h1>DOBAROS SITE</h1>
 
     <a href="#" class="hyperlink green">Πράσινο Κουμπί</a>
     <a href="#" class="hyperlink red">Κόκκινο Κουμπί</a>
@@ -89,6 +95,8 @@
     <a href="#" class="hyperlink black">Μαύρο Κουμπί</a>
     <a href="#" class="hyperlink purple">Μωβ Κουμπί</a>
 
-    <img src="https://via.placeholder.com/300" alt="Δείγμα Φωτογραφίας">
+    <div class="image-container">
+        <img src="https://via.placeholder.com/300" alt="Δείγμα Φωτογραφίας">
+    </div>
 </body>
 </html>
