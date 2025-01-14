@@ -98,19 +98,6 @@
             background-color: #6c3483;
         }
 
-        /* Restored ΕΠΙΚΟΙΝΩΝΙΑ Button */
-        .btn-contact {
-            background-color: #3498db; /* Blue */
-        }
-
-        .btn-contact:hover {
-            background-color: #1d70b7;
-        }
-
-        .btn:hover {
-            transform: scale(0.95);
-        }
-
         /* Footer Styling */
         footer {
             background-color: #333;
@@ -162,20 +149,36 @@
             top: 50px; /* Position image below the buttons */
         }
 
-        /* Position Contact Button at the bottom */
+        /* Contact Button (Fixed at the bottom) */
         .contact-button-container {
             position: fixed;
             bottom: 60px;
             left: 50%;
             transform: translateX(-50%);
         }
-    </style>
-    <script>
-        function showContactMessage() {
-            var message = document.getElementById('contact-message');
-            message.classList.add('show');
+
+        /* Updated "Click Me" Button Styling */
+        .contact-button-container button {
+            padding: 15px 30px;
+            background-color: #3498db; /* Blue color */
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px; /* Make it round */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-    </script>
+
+        .contact-button-container button:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+        .contact-button-container button:active {
+            transform: scale(0.95); /* Slight shrink on click */
+        }
+    </style>
 </head>
 <body>
 
@@ -201,20 +204,20 @@
     <!-- Contact Image -->
     <img src="https://via.placeholder.com/200" alt="Contact Image" class="contact-image">
 
-    <!-- Contact Button (Fixed at the bottom) -->
-    <div class="contact-button-container">
-        <a href="dddddddddddddddddddddddddddddddddddddddddddddddd" class="btn btn-contact" onclick="showContactMessage()">ΕΠΙΚΟΙΝΩΝΙΑ</a>
-    </div>
-
-    <!-- Contact Message (Appears from below the image) -->
-    <div id="contact-message">
-        EMAIL: totikogame@gmail.com :)
-    </div>
-
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 DOBAROS.XYZ. All rights reserved.</p>
     </footer>
+
+    <!-- Contact Button (Fixed at the bottom) -->
+    <div class="contact-button-container">
+        <button type="button" onclick="alert('EMAIL: totikogame@gmail.com :)')">EPIKINONIA</button>
+    </div>
+
+    <!-- Contact Message -->
+    <div id="contact-message">
+        EMAIL: totikogame@gmail.com :)
+    </div>
 
 </body>
 </html>
