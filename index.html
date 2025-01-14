@@ -28,8 +28,12 @@
             transition: background-color 0.3s ease;
         }
 
-        header:hover {
-            background-color: #8e44ad; /* Mov / Purple color */
+        header h1 {
+            transition: color 0.3s ease;
+        }
+
+        header:hover h1 {
+            color: #8e44ad;
         }
 
         /* Buttons Styling */
@@ -43,67 +47,93 @@
             padding: 15px 30px;
             color: white;
             text-decoration: none;
-            border-radius: 10px; /* Rounder corners */
+            border-radius: 10px;
             font-size: 16px;
-            font-weight: bold; /* Make text bold */
-            letter-spacing: 1px; /* Space out the letters */
+            font-weight: bold;
+            letter-spacing: 1px;
             transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Specific Button Colors */
-        .btn-1 { background-color: #FF0000; } /* Red */
-        .btn-2 { background-color: #000000; } /* Black */
-        .btn-3 { background-color: #28a745; } /* Green */
-        .btn-4, .btn-5, .btn-6 { background-color: #8e44ad; } /* Purple-like Mov color */
-        .btn-7 { background-color: #8e44ad; } /* Mov Color for Button 7 (Purple) */
+        .btn-1 { background-color: #FF0000; }
+        .btn-2 { background-color: #000000; }
+        .btn-3 { background-color: #28a745; }
+        .btn-4, .btn-5, .btn-6 { background-color: #8e44ad; }
+        .btn-7 { background-color: #8e44ad; }
+        .btn-contact { background-color: #3498db; }
 
-        /* Button Hover Effects for All Buttons */
         .btn:hover {
-            transform: scale(0.95); /* Shrink to 95% */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            transform: scale(0.95);
         }
 
-        /* Specific Hover Effects */
         .btn-1:hover { background-color: #cc0000; box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); }
-        .btn-2:hover { background-color: #333333; box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); }
-        .btn-3:hover { background-color: #218838; box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); }
+        .btn-2:hover { background-color: #333333; }
+        .btn-3:hover { background-color: #218838; }
         .btn-4:hover, .btn-5:hover, .btn-6:hover, .btn-7:hover { 
-            background-color: #6c3483; 
-            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+            background-color: #6c3483;
+        }
+        .btn-contact:hover {
+            background-color: #1d70b7;
         }
 
-        /* Image Section Styling */
-        .image-container {
-            margin: 30px 0;
+        /* New Hover Button Styling */
+        button {
+            outline: 0;
+            border: 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%; 
+            max-width: 400px;
+            height: 50px;
+            margin: 20px auto; /* Centering button */
+            border-radius: 0.5em;
+            box-shadow: 0 0.625em 1em 0 rgba(30, 143, 255, 0.35);
+            overflow: hidden;
+            cursor: pointer;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
+        button div {
+            transform: translateY(0px);
+            width: 110%;
         }
 
-        /* Contact Button Styling */
-        .contact-container {
-            margin: 20px 0;
+        button,
+        button div {
+            transition: 0.6s cubic-bezier(.16,1,.3,1);
         }
 
-        .contact-btn {
-            padding: 15px 30px;
-            background-color: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px; /* Rounder corners */
-            font-size: 16px;
-            font-weight: bold; /* Make text bold */
-            letter-spacing: 1px; /* Space out the letters */
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        button div span {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 50px;
+            padding: 0.75em 1.125em;
         }
 
-        .contact-btn:hover {
-            background-color: #218838;
-            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
-            transform: scale(0.95); /* Shrink to 95% */
+        button div:nth-child(1) {
+            background-color: #1e90ff;
+        }
+
+        button div:nth-child(2) {
+            background-color: #21dc62;
+        }
+
+        button:hover {
+            box-shadow: 0 0.625em 1em 0 rgba(33, 220, 98, 0.35);
+        }
+
+        button:hover div {
+            transform: translateY(-50px);
+        }
+
+        button p {
+            font-size: 17px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        button:active {
+            transform: scale(0.95);
         }
 
         /* Footer Styling */
@@ -120,51 +150,28 @@
             font-size: 14px;
         }
 
-        /* New Smaller and More Rectangular "Click Me!" Button */
-        .click-btn {
-            background-color: #007bff; /* Blue color */
-            color: white;
-            padding: 12px 25px; /* Smaller padding for a compact appearance */
-            border-radius: 5px; /* Slightly sharper corners */
-            font-size: 16px; /* Slightly smaller font */
+        /* Contact Message Styling */
+        #contact-message {
+            margin-top: 20px;
+            font-size: 18px;
             font-weight: bold;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Sharper shadow */
+            color: #2c3e50;
+            display: none; /* Initially hidden */
         }
 
-        .click-btn:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            transform: scale(1.05); /* Slight growth on hover */
-            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Sharper shadow on hover */
-        }
-
-        /* Responsive Design - Media Query */
-        @media (max-width: 768px) {
-            header {
-                padding: 10px; /* Adjust header padding for smaller screens */
-            }
-
-            .btn {
-                padding: 12px 25px; /* Adjust button size for mobile */
-                font-size: 14px; /* Reduce button font size */
-            }
-
-            .contact-btn {
-                padding: 12px 25px; /* Adjust contact button size */
-                font-size: 14px; /* Reduce font size */
-            }
-
-            .click-btn {
-                padding: 10px 20px; /* Adjust padding for smaller screens */
-                font-size: 14px; /* Reduce font size */
-            }
-
-            footer p {
-                font-size: 12px; /* Smaller text for footer on small screens */
-            }
+        /* Image Styling */
+        img {
+            width: 200px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
         }
     </style>
+    <script>
+        function showContactMessage() {
+            document.getElementById('contact-message').style.display = 'block';
+        }
+    </script>
 </head>
 <body>
 
@@ -175,26 +182,39 @@
 
     <!-- Buttons Section -->
     <div class="buttons-container">
-        <a href=" https://www.youtube.com/channel/UCgb0ziRZh6OVkvLz2sXRdrA" class="btn btn-1">YOUTUBE</a>
+        <a href="https://www.youtube.com/channel/UCgb0ziRZh6OVkvLz2sXRdrA" class="btn btn-1">YOUTUBE</a>
         <a href="https://www.tiktok.com/@_.stratooss" class="btn btn-2">TIK TOK</a>
         <a href="https://trovo.live/s/DOBAROS/228436558" class="btn btn-3">TROVO</a>
         <a href="https://www.twitch.tv/realdobaros" class="btn btn-4">TWITCH</a>
         <a href="https://dobarosshop.mysellauth.com/" class="btn btn-5">DOBAROS SHOP (SITE)</a>
         <a href="https://discord.gg/xHCZe5ekb9" class="btn btn-6">DOBAROS SHOP (DISCORD)</a>
-        <a href="https://discord.gg/4aB47DtUTc" class="btn btn-7">DOBAROS COMMUNITY</a> <!-- Mov Button -->
+        <a href="https://discord.gg/4aB47DtUTc" class="btn btn-7">DOBAROS COMMUNITY</a>
+        <a href="#" class="btn btn-contact" onclick="showContactMessage()">ΕΠΙΚΟΙΝΩΝΙΑ</a>
     </div>
 
-    <!-- Image Section -->
-    <div class="image-container">
-        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=678742d3&is=6785f153&hm=7e8c585f51081c63637607fc58116a3eac88359db2ed97e2465e73f8795fed3e&" alt="Photo" />
+    <!-- Image and Hover Button -->
+    <img src="https://via.placeholder.com/200" alt="Example Image">
+    <div>
+        <button>
+            <div>
+                <span>
+                    <p>BALE TO MOUSE PANO EDW</p><p>:)</p>
+                </span>
+            </div>
+            <div>
+                <span>
+                    <p>PAYPAL: tatanisstratos@gmail.com ;)</p><p>:D</p>
+                </span>
+            </div>
+        </button>
     </div>
 
-    <!-- New Contact Button (Click Me!) -->
-    <div class="contact-container">
-        <button class="click-btn" onclick="alert('STEILE MOU ENA EMAIL EDW totikogame@gmail.com')">EPIKINONIA</button>
+    <!-- Contact Message -->
+    <div id="contact-message">
+        EMAIL: totikogame@gmail.com :)
     </div>
 
-    <!-- Copyright Section -->
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 DOBAROS.XYZ. All rights reserved.</p>
     </footer>
