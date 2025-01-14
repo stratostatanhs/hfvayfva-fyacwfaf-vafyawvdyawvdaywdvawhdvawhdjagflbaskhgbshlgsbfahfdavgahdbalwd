@@ -17,8 +17,8 @@
         h1 {
             margin-top: 20px;
             --border-right: 6px;
-            --text-stroke-color: rgba(255,255,255,0.6);
-            --animation-color: #37FF8B;
+            --text-stroke-color: rgba(0, 0, 0, 0.6); /* Μαύρο περίγραμμα */
+            --animation-color: black; /* Χρώμα όταν γίνεται hover */
             --fs-size: 2.5em;
             letter-spacing: 3px;
             text-decoration: none;
@@ -26,22 +26,28 @@
             font-family: "Arial";
             position: relative;
             text-transform: uppercase;
-            color: transparent;
+            color: white; /* Άσπρο κείμενο αρχικά */
             -webkit-text-stroke: 1px var(--text-stroke-color);
             display: inline-block; /* Για να λειτουργήσει σωστά το animation */
+            transition: color 0.5s, -webkit-text-stroke-color 0.5s;
         }
 
         h1 .hover-text {
             position: absolute;
             box-sizing: border-box;
             content: attr(data-text);
-            color: var(--animation-color);
+            color: black; /* Το hover αλλάζει σε μαύρο */
             width: 0%;
             inset: 0;
             border-right: var(--border-right) solid var(--animation-color);
             overflow: hidden;
             transition: 0.5s;
             -webkit-text-stroke: 1px var(--animation-color);
+        }
+
+        h1:hover {
+            color: black; /* Το κείμενο γίνεται μαύρο */
+            -webkit-text-stroke-color: white; /* Το περίγραμμα γίνεται άσπρο */
         }
 
         h1:hover .hover-text {
