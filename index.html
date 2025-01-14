@@ -3,221 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official site of DOBAROS with links to social media and community.">
-    <meta name="author" content="DOBAROS">
-    <meta name="keywords" content="DOBAROS, Trovo, YouTube, Twitch, TikTok, Community, Discord, Shop">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="DOBAROS SITE">
-    <meta property="og:description" content="Visit the official site of DOBAROS with links to all his social platforms.">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67849fd3&is=67834e53&hm=b8598baf9a48699811a5db6c3aa2a2ab71fd655e61a22c7fbc70cd0acf10ba1b&">
     <title>DOBAROS.XYZ</title>
     <style>
-        /* General Styling */
-        body {
-            background-color: #4b0082; /* Purple background */
-            color: white;
-            font-family: Arial, sans-serif;
+        /* General Reset */
+        * {
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        /* Body and Font Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d3d3d3; /* Gray Background */
             text-align: center;
-            padding-bottom: 50px; /* Ensure space for footer */
+            padding-bottom: 50px; /* For space for footer */
         }
 
         /* Header Styling */
-        h1 {
-            margin-top: 20px;
-            font-size: 3em;
-            font-family: 'Arial', sans-serif;
+        header {
+            background-color: #333;
             color: white;
-            text-transform: uppercase;
-            position: relative;
-            letter-spacing: 3px;
-            -webkit-text-stroke: 1px rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        header:hover {
+            background-color: #8e44ad; /* Mov / Purple color */
+        }
+
+        /* Buttons Styling */
+        .buttons-container {
+            margin: 30px 0;
+        }
+
+        .btn {
             display: inline-block;
-            transition: color 0.5s, -webkit-text-stroke-color 0.5s;
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        h1 .hover-text {
-            position: absolute;
-            content: attr(data-text);
-            color: black;
-            width: 0%;
-            border-right: 6px solid black;
-            transition: width 0.5s, inset 0.5s;
-            -webkit-text-stroke: 1px black;
-        }
-
-        h1:hover {
-            color: black;
-            -webkit-text-stroke-color: white;
-        }
-
-        h1:hover .hover-text {
-            width: 110%;
-        }
-
-        /* Link Container */
-        .link-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 150px;
-        }
-
-        .link-container a {
             margin: 10px;
             padding: 15px 30px;
-            font-size: 16px;
+            color: white;
             text-decoration: none;
-            border-radius: 5px;
-            color: white;
-            transition: transform 0.2s, background-color 0.3s;
-        }
-
-        .link-container a:hover {
-            transform: scale(1.1);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .green { background-color: green; }
-        .red { background-color: red; }
-        .purple { background-color: #800080; }
-        .black { background-color: black; }
-
-        /* Button Styling */
-        .contact-button {
-            background-color: blue;
-            color: white;
-            padding: 15px 30px;
+            border-radius: 10px; /* Rounder corners */
             font-size: 16px;
-            border-radius: 5px;
-            margin-top: 20px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.3s;
+            font-weight: bold; /* Make text bold */
+            letter-spacing: 1px; /* Space out the letters */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
-        .contact-button:hover {
-            transform: scale(1.1);
-            background-color: darkblue;
+        /* Specific Button Colors */
+        .btn-1 { background-color: #FF0000; } /* Red */
+        .btn-2 { background-color: #000000; } /* Black */
+        .btn-3 { background-color: #28a745; } /* Green */
+        .btn-4, .btn-5, .btn-6 { background-color: #8e44ad; } /* Purple-like Mov color */
+        .btn-7 { background-color: #8e44ad; } /* Mov Color for Button 7 (Purple) */
+
+        /* Button Hover Effects for All Buttons */
+        .btn:hover {
+            transform: scale(0.95); /* Shrink to 95% */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
         }
 
-        /* Image Styling */
+        /* Specific Hover Effects */
+        .btn-1:hover { background-color: #cc0000; box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); }
+        .btn-2:hover { background-color: #333333; box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); }
+        .btn-3:hover { background-color: #218838; box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); }
+        .btn-4:hover, .btn-5:hover, .btn-6:hover, .btn-7:hover { 
+            background-color: #6c3483; 
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        /* Image Section Styling */
         .image-container {
-            margin-top: 20px;
+            margin: 30px 0;
         }
 
         img {
-            width: 100%;
-            max-width: 600px;
+            max-width: 100%;
             height: auto;
-            border: 5px solid white;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
         }
 
-        img:hover {
-            transform: scale(1.05);
+        /* Contact Button Styling */
+        .contact-container {
+            margin: 20px 0;
         }
 
-        /* Footer Section */
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #222;
-            color: #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-
-        footer a {
-            color: #ddd;
+        .contact-btn {
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
             text-decoration: none;
-            font-weight: bold;
+            border-radius: 10px; /* Rounder corners */
+            font-size: 16px;
+            font-weight: bold; /* Make text bold */
+            letter-spacing: 1px; /* Space out the letters */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        .contact-btn:hover {
+            background-color: #218838;
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(0.95); /* Shrink to 95% */
         }
 
-        /* Responsive Styling */
-        @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            .link-container a {
-                font-size: 14px;
-                padding: 12px 20px;
-            }
-
-            .contact-button {
-                font-size: 14px;
-                padding: 12px 20px;
-            }
-
-            img {
-                max-width: 90%;
-            }
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
         }
 
-        @media screen and (max-width: 480px) {
-            h1 {
-                font-size: 1.5em;
+        footer p {
+            font-size: 14px;
+        }
+
+        /* Responsive Design - Media Query */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px; /* Adjust header padding for smaller screens */
             }
 
-            .link-container a {
-                font-size: 12px;
-                padding: 10px 15px;
+            .btn {
+                padding: 12px 25px; /* Adjust button size for mobile */
+                font-size: 14px; /* Reduce button font size */
             }
 
-            .contact-button {
-                font-size: 12px;
-                padding: 10px 15px;
+            .contact-btn {
+                padding: 12px 25px; /* Adjust contact button size */
+                font-size: 14px; /* Reduce font size */
             }
 
-            img {
-                max-width: 100%;
+            footer p {
+                font-size: 12px; /* Smaller text for footer on small screens */
             }
         }
     </style>
 </head>
 <body>
-    <h1>
-        <span class="hover-text" data-text="DOBAROS SITE"></span>
-        DOBAROS SITE
-    </h1>
 
-    <div class="link-container">
-        <a href="https://trovo.live/s/DOBAROS/228436558" class="green">TROVO</a>
-        <a href="https://www.youtube.com/channel/UCgb0ziRZh6OVkvLz2sXRdrA" class="red">YOUTUBE</a>
-        <a href="https://www.twitch.tv/realdobaros" class="purple">TWITCH</a>
-        <a href="https://www.tiktok.com/@_.stratooss" class="black">TIK TOK</a>
-        <a href="https://discord.gg/4aB47DtUTc" class="purple">DOBAROS COMMUNITY</a>
-        <a href="https://discord.gg/xHCZe5ekb9" class="purple" target="_blank" style="font-weight: bold;">DOBAROS SHOP (DISCORD)</a>
-        <a href="https://dobarosshop.mysellauth.com/" class="purple" target="_blank" style="font-weight: bold;">DOBAROS SHOP (SITE)</a>
+    <!-- Site Header -->
+    <header>
+        <h1>DOBAROS.XYZ</h1>
+    </header>
+
+    <!-- Buttons Section -->
+    <div class="buttons-container">
+        <a href="#" class="btn btn-1">Button 1</a>
+        <a href="#" class="btn btn-2">Button 2</a>
+        <a href="#" class="btn btn-3">Button 3</a>
+        <a href="#" class="btn btn-4">Button 4</a>
+        <a href="#" class="btn btn-5">Button 5</a>
+        <a href="#" class="btn btn-6">Button 6</a>
+        <a href="#" class="btn btn-7">Button 7 (Mov)</a> <!-- Mov Button -->
     </div>
 
+    <!-- Image Section -->
     <div class="image-container">
-        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67849fd3&is=67834e53&hm=b8598baf9a48699811a5db6c3aa2a2ab71fd655e61a22c7fbc70cd0acf10ba1b&" alt="DOBAROS LOGO">
+        <img src="your-photo.jpg" alt="Photo" />
     </div>
 
-    <button class="contact-button" onclick="alert(' STILE MOU EMAIL EDW totikogame@gmail.com')">ΕΠΙΚΟΙΝΩΝΙΑ</button>
+    <!-- Contact Button -->
+    <div class="contact-container">
+        <a href="mailto:contact@dobaros.xyz" class="contact-btn">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+    </div>
 
-    <!-- Footer Section with Copyright -->
+    <!-- Copyright Section -->
     <footer>
-        <p>&copy; 2025 DOBAROS. All rights reserved. <br> Visit our <a href="https://dobarosshop.mysellauth.com/" target="_blank">Official Shop</a>.</p>
+        <p>&copy; 2025 DOBAROS.XYZ. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
