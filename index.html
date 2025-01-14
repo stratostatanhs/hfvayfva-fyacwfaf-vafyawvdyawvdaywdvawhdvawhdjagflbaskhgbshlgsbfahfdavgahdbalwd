@@ -1,26 +1,203 @@
-<div class="flex items-center justify-center h-full">
-  <button
-    class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-    type="button"
-  >
-    Facebook
-  </button>
-  <button
-    class="text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-    type="button"
-  >
-    YouTube
-  </button>
-  <button
-    class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-400/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-    type="button"
-  >
-    Twitter
-  </button>
-  <button
-    class="text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-    type="button"
-  >
-    Instagram
-  </button>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOBAROS.XYZ</title>
+    <style>
+        body {
+            background-color: #4b0082; /* Μωβ */
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+            --border-right: 6px;
+            --text-stroke-color: rgba(0, 0, 0, 0.6); /* Μαύρο περίγραμμα */
+            --animation-color: black; /* Χρώμα όταν γίνεται hover */
+            --fs-size: 2.5em;
+            letter-spacing: 3px;
+            text-decoration: none;
+            font-size: var(--fs-size);
+            font-family: "Arial";
+            position: relative;
+            text-transform: uppercase;
+            color: white; /* Άσπρο κείμενο αρχικά */
+            -webkit-text-stroke: 1px var(--text-stroke-color);
+            display: inline-block; /* Για να λειτουργήσει σωστά το animation */
+            transition: color 0.5s, -webkit-text-stroke-color 0.5s;
+        }
+
+        h1 .hover-text {
+            position: absolute;
+            box-sizing: border-box;
+            content: attr(data-text);
+            color: black; /* Το hover αλλάζει σε μαύρο */
+            width: 0%;
+            inset: 0 -10px 0 -10px; /* Μετακίνηση αριστερά (-10px) και δεξιά (-10px) */
+            border-right: var(--border-right) solid var(--animation-color);
+            overflow: hidden;
+            transition: width 0.5s, inset 0.5s;
+            -webkit-text-stroke: 1px var(--animation-color);
+        }
+
+        h1:hover {
+            color: black; /* Το κείμενο γίνεται μαύρο */
+            -webkit-text-stroke-color: white; /* Το περίγραμμα γίνεται άσπρο */
+        }
+
+        h1:hover .hover-text {
+            width: 110%; /* Η γραμμή εκτείνεται πιο δεξιά */
+            inset: 0 -10px 0 -10px; /* Διατηρεί την ίδια μετατόπιση */
+            filter: drop-shadow(0 0 23px var(--animation-color));
+        }
+
+        .hyperlink {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .hyperlink:hover {
+            transform: scale(1.1);
+        }
+
+        .green {
+            background-color: green;
+            color: white;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+
+        .purple {
+            background-color: #800080; /* Μωβ */
+            color: white;
+        }
+
+        .black {
+            background-color: black;
+            color: white;
+        }
+
+        .contact-button {
+            background-color: blue;
+            color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px; /* Αφήνει απόσταση από την εικόνα */
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.1);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        img {
+            width: 50%;
+            max-width: 1920px;
+            height: auto;
+            border: 5px solid white;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 1280px) {
+            img {
+                max-width: 720px;
+            }
+        }
+
+        @media screen and (min-width: 1921px) and (max-width: 2560px) {
+            img {
+                max-width: 2048px; /* 2K */
+            }
+        }
+
+        @media screen and (min-width: 2561px) {
+            img {
+                max-width: 3840px; /* 4K */
+            }
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .link-container a {
+            margin: 5px 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <span class="hover-text" data-text="DOBAROS SITE"></span>
+        DOBAROS SITE
+    </h1>
+
+    <div class="link-container">
+        <a href="https://trovo.live/s/DOBAROS/228436558" class="hyperlink green">TROVO</a>
+        <a href="https://www.youtube.com/channel/UCgb0ziRZh6OVkvLz2sXRdrA" class="hyperlink red">YOUTUBE</a>
+        <a href="https://www.twitch.tv/realdobaros" class="hyperlink purple">TWITCH</a>
+        <a href="https://www.tiktok.com/@_.stratooss" class="hyperlink black">TIK TOK</a>
+        <a href="https://discord.gg/4aB47DtUTc" class="hyperlink purple">DOBAROS COMMUNITY</a>
+        <a href="https://discord.gg/xHCZe5ekb9" class="hyperlink purple" target="_blank" style="text-decoration: underline; font-weight: bold;">DOBAROS SHOP (DISCORD)</a>
+        <a href="https://dobarosshop.mysellauth.com/" class="hyperlink purple" target="_blank" style="text-decoration: underline; font-weight: bold;">DOBAROS SHOP (SITE)</a>
+    </div>
+
+    <div class="flex items-center justify-center h-full">
+        <button
+            class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            type="button"
+        >
+            Facebook
+        </button>
+        <button
+            class="text-white bg-gradient-to-r from-red-500 via-red-600 to-red-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            type="button"
+        >
+            YouTube
+        </button>
+        <button
+            class="text-white bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-400/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            type="button"
+        >
+            Twitter
+        </button>
+        <button
+            class="text-white bg-gradient-to-r from-pink-500 via-pink-600 to-pink-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+            type="button"
+        >
+            Instagram
+        </button>
+    </div>
+
+    <div class="image-container">
+        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67849fd3&is=67834e53&hm=b8598baf9a48699811a5db6c3aa2a2ab71fd655e61a22c7fbc70cd0acf10ba1b&" alt="DOBAROS LOGO">
+    </div>
+
+    <button class="contact-button" onclick="alert(' STILE MOU EMAIL EDW totikogame@gmail.com')">ΕΠΙΚΟΙΝΩΝΙΑ</button>
+</body>
+</html>
