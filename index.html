@@ -120,6 +120,25 @@
             font-size: 14px;
         }
 
+        /* New Smaller and More Rectangular "Click Me!" Button */
+        .click-btn {
+            background-color: #007bff; /* Blue color */
+            color: white;
+            padding: 12px 25px; /* Smaller padding for a compact appearance */
+            border-radius: 5px; /* Slightly sharper corners */
+            font-size: 16px; /* Slightly smaller font */
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Sharper shadow */
+        }
+
+        .click-btn:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: scale(1.05); /* Slight growth on hover */
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Sharper shadow on hover */
+        }
+
         /* Responsive Design - Media Query */
         @media (max-width: 768px) {
             header {
@@ -133,6 +152,11 @@
 
             .contact-btn {
                 padding: 12px 25px; /* Adjust contact button size */
+                font-size: 14px; /* Reduce font size */
+            }
+
+            .click-btn {
+                padding: 10px 20px; /* Adjust padding for smaller screens */
                 font-size: 14px; /* Reduce font size */
             }
 
@@ -153,11 +177,11 @@
     <div class="buttons-container">
         <a href="#" class="btn btn-1">YOUTUBE</a>
         <a href="#" class="btn btn-2">TIK TOK</a>
-        <a href="#" class="btn btn-3">TROVO </a>
-        <a href="#" class="btn btn-4">TWITCH </a>
-        <a href="#" class="btn btn-5">DOBAROS SHOP (SITE) </a>
-        <a href="#" class="btn btn-6">DOBAROS SHOP (DISCORD) </a>
-        <a href="#" class="btn btn-7">DOBAROS COMMUNITY </a> <!-- Mov Button -->
+        <a href="#" class="btn btn-3">TROVO</a>
+        <a href="#" class="btn btn-4">TWITCH</a>
+        <a href="#" class="btn btn-5">DOBAROS SHOP (SITE)</a>
+        <a href="#" class="btn btn-6">DOBAROS SHOP (DISCORD)</a>
+        <a href="#" class="btn btn-7">DOBAROS COMMUNITY</a> <!-- Mov Button -->
     </div>
 
     <!-- Image Section -->
@@ -165,9 +189,9 @@
         <img src="your-photo.jpg" alt="Photo" />
     </div>
 
-    <!-- Contact Button -->
+    <!-- New Contact Button (Click Me!) -->
     <div class="contact-container">
-       <button type="button" onclick="alert('Hello world!')">Click Me!</button>
+        <button class="click-btn" onclick="alert('STEILE MOU ENA EMAIL EDW totikogame@gmail.com')">Click Me!</button>
     </div>
 
     <!-- Copyright Section -->
