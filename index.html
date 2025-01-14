@@ -5,105 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOBAROS.XYZ</title>
     <style>
-        /* === Loading Animation === */
-        @keyframes blinkCursor {
-            50% {
-                border-right-color: transparent;
-            }
-        }
-
-        @keyframes typeAndDelete {
-            0%,
-            10% {
-                width: 0;
-            }
-            45%,
-            55% {
-                width: 6.2em;
-            }
-            90%,
-            100% {
-                width: 0;
-            }
-        }
-
-        .terminal-loader {
-            border: 0.1em solid #333;
-            background-color: #1a1a1a;
-            color: #0f0;
-            font-family: "Courier New", Courier, monospace;
-            font-size: 1em;
-            padding: 1.5em 1em;
-            width: 12em;
-            margin: 100px auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 4px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            overflow: hidden;
-            box-sizing: border-box;
-            z-index: 1000;
-        }
-
-        .terminal-header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1.5em;
-            background-color: #333;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            padding: 0 0.4em;
-            box-sizing: border-box;
-        }
-
-        .terminal-controls {
-            float: right;
-        }
-
-        .control {
-            display: inline-block;
-            width: 0.6em;
-            height: 0.6em;
-            margin-left: 0.4em;
-            border-radius: 50%;
-            background-color: #777;
-        }
-
-        .control.close {
-            background-color: #e33;
-        }
-
-        .control.minimize {
-            background-color: #ee0;
-        }
-
-        .control.maximize {
-            background-color: #0b0;
-        }
-
-        .terminal-title {
-            float: left;
-            line-height: 1.5em;
-            color: #eee;
-        }
-
-        .text {
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 0.2em solid green; /* Cursor */
-            animation: typeAndDelete 4s steps(11) infinite,
-                blinkCursor 0.5s step-end infinite alternate;
-            margin-top: 1.5em;
-        }
-
-        /* === Main Page Styling === */
         body {
-            background-color: #4b0082; /* Purple */
+            background-color: #4b0082; /* Μωβ */
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -113,6 +16,44 @@
 
         h1 {
             margin-top: 20px;
+            --border-right: 6px;
+            --text-stroke-color: rgba(0, 0, 0, 0.6); /* Μαύρο περίγραμμα */
+            --animation-color: black; /* Χρώμα όταν γίνεται hover */
+            --fs-size: 2.5em;
+            letter-spacing: 3px;
+            text-decoration: none;
+            font-size: var(--fs-size);
+            font-family: "Arial";
+            position: relative;
+            text-transform: uppercase;
+            color: white; /* Άσπρο κείμενο αρχικά */
+            -webkit-text-stroke: 1px var(--text-stroke-color);
+            display: inline-block; /* Για να λειτουργήσει σωστά το animation */
+            transition: color 0.5s, -webkit-text-stroke-color 0.5s;
+        }
+
+        h1 .hover-text {
+            position: absolute;
+            box-sizing: border-box;
+            content: attr(data-text);
+            color: black; /* Το hover αλλάζει σε μαύρο */
+            width: 0%;
+            inset: 0 -10px 0 -10px; /* Μετακίνηση αριστερά (-10px) και δεξιά (-10px) */
+            border-right: var(--border-right) solid var(--animation-color);
+            overflow: hidden;
+            transition: width 0.5s, inset 0.5s;
+            -webkit-text-stroke: 1px var(--animation-color);
+        }
+
+        h1:hover {
+            color: black; /* Το κείμενο γίνεται μαύρο */
+            -webkit-text-stroke-color: white; /* Το περίγραμμα γίνεται άσπρο */
+        }
+
+        h1:hover .hover-text {
+            width: 110%; /* Η γραμμή εκτείνεται πιο δεξιά */
+            inset: 0 -10px 0 -10px; /* Διατηρεί την ίδια μετατόπιση */
+            filter: drop-shadow(0 0 23px var(--animation-color));
         }
 
         .hyperlink {
@@ -140,7 +81,7 @@
         }
 
         .purple {
-            background-color: #800080; /* Purple */
+            background-color: #800080; /* Μωβ */
             color: white;
         }
 
@@ -156,7 +97,7 @@
             font-size: 16px;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 20px; /* Αφήνει απόσταση από την εικόνα */
             border: none;
             cursor: pointer;
             transition: transform 0.2s;
@@ -211,24 +152,11 @@
     </style>
 </head>
 <body>
-    <!-- Loading Animation -->
-    <div class="terminal-loader">
-        <div class="terminal-header">
-            <span class="terminal-title">Terminal</span>
-            <div class="terminal-controls">
-                <span class="control close"></span>
-                <span class="control minimize"></span>
-                <span class="control maximize"></span>
-            </div>
-        </div>
-        <div class="text">Loading...</div>
-    </div>
-
-    <!-- Main Content -->
     <h1>
         <span class="hover-text" data-text="DOBAROS SITE"></span>
         DOBAROS SITE
     </h1>
+
     <div class="link-container">
         <a href="https://trovo.live/s/DOBAROS/228436558" class="hyperlink green">TROVO</a>
         <a href="https://www.youtube.com/channel/UCgb0ziRZh6OVkvLz2sXRdrA" class="hyperlink red">YOUTUBE</a>
@@ -240,18 +168,9 @@
     </div>
 
     <div class="image-container">
-        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif" alt="DOBAROS LOGO">
+        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67849fd3&is=67834e53&hm=b8598baf9a48699811a5db6c3aa2a2ab71fd655e61a22c7fbc70cd0acf10ba1b&" alt="DOBAROS LOGO">
     </div>
 
-    <button class="contact-button" onclick="alert('STILE MOU EMAIL EDW totikogame@gmail.com')">ΕΠΙΚΟΙΝΩΝΙΑ</button>
-
-    <script>
-        window.addEventListener("load", () => {
-            const loader = document.querySelector(".terminal-loader");
-            if (loader) {
-                loader.style.display = "none"; // Hide the loader
-            }
-        });
-    </script>
+    <button class="contact-button" onclick="alert(' STILE MOU EMAIL EDW totikogame@gmail.com')">ΕΠΙΚΟΙΝΩΝΙΑ</button>
 </body>
 </html>
