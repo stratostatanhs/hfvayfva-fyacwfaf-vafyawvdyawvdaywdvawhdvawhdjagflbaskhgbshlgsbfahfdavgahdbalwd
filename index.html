@@ -206,14 +206,14 @@
         }
 
         .image-container img {
-            width: 100%;
+            width: 60%; /* 40% smaller */
             height: auto;
         }
 
         /* Media Queries for Mobile Devices */
         @media (max-width: 768px) {
             .button {
-                font-size: 2em;
+                font-size: 1.8em; /* Smaller font size for mobile */
             }
 
             .contact-button-container {
@@ -221,7 +221,12 @@
             }
 
             .btn {
-                width: 100%;
+                width: 100%; /* Make buttons take full width on mobile */
+                padding: 15px 0; /* Bigger padding on small screens */
+            }
+
+            .image-container img {
+                width: 80%; /* 80% width for smaller screens */
             }
         }
 
