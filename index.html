@@ -20,7 +20,7 @@
             padding-bottom: 50px; /* For space for footer */
         }
 
-        /* Stylish Button for DOBAROS.XYZ */
+        /* Stylish Button */
         .button {
             margin: 0 auto;
             height: auto;
@@ -29,13 +29,14 @@
             border: none;
             cursor: pointer;
             position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the button */
         }
 
         .button {
             --border-right: 6px;
             --text-stroke-color: rgba(255, 255, 255, 0.8); /* White stroke for initial text */
             --animation-color: #800080; /* Purple for hover text */
-            --fs-size: 2em; /* Smaller font size */
+            --fs-size: 2.5em;
             letter-spacing: 3px;
             text-decoration: none;
             font-size: var(--fs-size);
@@ -64,88 +65,50 @@
             filter: drop-shadow(0 0 23px var(--animation-color)); /* Purple glow */
         }
 
-        /* Buttons Section */
+        /* Buttons Styling */
         .buttons-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
             margin: 30px 0;
             position: relative;
-            top: 60px;
+            top: 60px; /* Position the buttons below the header */
         }
 
         .btn {
-            flex: 1 1 150px; /* Smaller width for buttons */
-            max-width: 200px; /* Maximum width for buttons */
-            padding: 10px 20px; /* Smaller padding */
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
             color: white;
             text-decoration: none;
-            border-radius: 20px; /* More rounded edges */
-            font-size: 16px; /* Smaller font size */
+            border-radius: 10px;
+            font-size: 16px;
             font-weight: bold;
-            letter-spacing: 1.5px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Softer shadow */
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Hover Effect for Buttons */
-        .btn:hover {
-            transform: scale(1.1); /* Slightly enlarge the button */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* More intense shadow */
-            transition: all 0.3s ease;
+        /* Button Colors */
+        .btn-1 { background-color: #FF0000; }
+        .btn-2 { background-color: #000000; }
+        .btn-3 { background-color: #28a745; }
+        .btn-4, .btn-5, .btn-6 { background-color: #8e44ad; }
+        .btn-7 { background-color: #8e44ad; }
+
+        /* Button Hover Effects */
+        .btn-1:hover { background-color: #cc0000; box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); }
+        .btn-2:hover { background-color: #333333; }
+        .btn-3:hover { background-color: #218838; }
+        .btn-4:hover, .btn-5:hover, .btn-6:hover, .btn-7:hover { background-color: #6c3483; }
+
+        /* Image Styling */
+        .image-container {
+            margin-top: 100px;
         }
 
-        /* Specific Colors for Purple Buttons */
-        .btn-1, .btn-4, .btn-5, .btn-6, .btn-7 {
-            background-color: #800080; /* Purple color */
-        }
-
-        /* TROVO Button - Green Color */
-        .btn-3 {
-            background-color: #28a745; /* Green color for TROVO */
-            animation: pulse 1.5s infinite; /* Adding pulse animation */
-        }
-
-        /* TWITCH Button - Purple with Pulse Animation */
-        .btn-4 {
-            background-color: #800080; /* Purple color for TWITCH */
-            animation: pulse 1.5s infinite; /* Adding pulse animation */
-        }
-
-        /* Button Animations */
-        .btn-1 {
-            background-color: #FF0000; /* Red color */
-            animation: pulse 1.5s infinite; /* Adding pulse animation */
-        }
-
-        .btn-2 {
-            background-color: #000000; /* Black color */
-            animation: pulse 1.5s infinite; /* Adding pulse animation */
-        }
-
-        .btn-5 {
-            background-color: #800080; /* Purple color */
-            animation: pulse 1.5s infinite; /* Adding pulse animation */
-        }
-
-        .btn-6 {
-            background-color: #800080; /* Purple color */
-            animation: pulse 1.5s infinite; /* Adding pulse animation */
-        }
-
-        .btn-7 {
-            background-color: #800080; /* Purple color */
-            animation: pulse 1.5s infinite; /* Adding pulse animation */
-        }
-
-        /* Animation for Button Pulse */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+        .contact-image {
+            width: 1000px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
         }
 
         /* Footer Styling */
@@ -153,7 +116,7 @@
             background-color: #333;
             color: white;
             padding: 10px 0;
-            position: relative;
+            position: fixed;
             bottom: 0;
             width: 100%;
         }
@@ -162,12 +125,7 @@
             font-size: 14px;
         }
 
-        /* Header Styling */
-        header {
-            margin-top: 50px;
-        }
-
-        /* Contact Button (Fixed at the bottom) */
+        /* Contact Button Styling */
         .contact-button-container {
             position: fixed;
             bottom: 60px;
@@ -175,12 +133,11 @@
             transform: translateX(-50%);
         }
 
-        /* Contact Button Styling */
         .contact-button-container button {
-            padding: 10px 20px; /* Smaller padding */
-            background: linear-gradient(45deg, #00f260, #0575e6); /* Gradient color */
+            padding: 15px 30px;
+            background-color: #3498db; /* Blue color */
             color: white;
-            font-size: 16px; /* Smaller font size */
+            font-size: 18px;
             border: none;
             border-radius: 50px; /* Make it round */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -189,7 +146,7 @@
         }
 
         .contact-button-container button:hover {
-            background: linear-gradient(45deg, #0575e6, #00f260); /* Reverse gradient */
+            background-color: #2980b9; /* Darker blue on hover */
             transform: scale(1.1); /* Slight zoom effect on hover */
         }
 
@@ -197,37 +154,26 @@
             transform: scale(0.95); /* Slight shrink on click */
         }
 
-        /* Image Styling */
-        .image-container {
-            width: 100%;
-            margin: 150px auto 0;
-            display: block;
-            text-align: center;
+        /* Button Animation Effects */
+        .btn:active {
+            animation: pressAnim 0.2s forwards;
+            transform: scale(0.95); /* Shrink effect when clicked */
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow */
         }
 
-        .image-container img {
-            width: 60%; /* 40% smaller */
-            height: auto;
+        @keyframes pressAnim {
+            0% { transform: scale(1); }
+            100% { transform: scale(0.95); }
         }
 
-        /* Media Queries for Mobile Devices */
-        @media (max-width: 768px) {
-            .button {
-                font-size: 1.8em; /* Smaller font size for mobile */
-            }
+        /* Animation when mouse goes over buttons */
+        .btn:hover {
+            animation: hoverAnim 0.5s forwards;
+        }
 
-            .contact-button-container {
-                bottom: 20px;
-            }
-
-            .btn {
-                width: 100%; /* Make buttons take full width on mobile */
-                padding: 15px 0; /* Bigger padding on small screens */
-            }
-
-            .image-container img {
-                width: 80%; /* 80% width for smaller screens */
-            }
+        @keyframes hoverAnim {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
 
     </style>
@@ -255,7 +201,7 @@
 
     <!-- Image Section -->
     <div class="image-container">
-        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67889453&is=678742d3&hm=e9817664d7d21487f031d60eebad5b613b7193da196e21ff9a73b8010e203821&" alt="DOBAROS LOGO">
+        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67849fd3&is=67834e53&hm=b8598baf9a48699811a5db6c3aa2a2ab71fd655e61a22c7fbc70cd0acf10ba1b&" alt="DOBAROS LOGO" class="contact-image">
     </div>
 
     <!-- Footer -->
