@@ -20,7 +20,7 @@
             padding-bottom: 50px; /* For space for footer */
         }
 
-        /* Stylish Button */
+        /* Stylish Button for DOBAROS.XYZ */
         .button {
             margin: 0 auto;
             height: auto;
@@ -64,7 +64,7 @@
             filter: drop-shadow(0 0 23px var(--animation-color)); /* Purple glow */
         }
 
-        /* Buttons Styling */
+        /* Buttons Section */
         .buttons-container {
             margin: 30px 0;
             position: relative;
@@ -77,25 +77,77 @@
             padding: 15px 30px;
             color: white;
             text-decoration: none;
-            border-radius: 10px;
-            font-size: 16px;
+            border-radius: 25px; /* Rounded edges */
+            font-size: 18px;
             font-weight: bold;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            letter-spacing: 1.5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
         }
 
-        .btn-1 { background-color: #FF0000; }
-        .btn-2 { background-color: #000000; }
-        .btn-3 { background-color: #28a745; }
-        .btn-4, .btn-5, .btn-6 { background-color: #8e44ad; }
-        .btn-7 { background-color: #8e44ad; }
+        /* YouTube - Red with movement */
+        .btn-1 {
+            background-color: #FF0000;
+            animation: twitchAnim 2s infinite; /* Adding MOV animation */
+        }
 
-        .btn-1:hover { background-color: #cc0000; box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); }
-        .btn-2:hover { background-color: #333333; }
-        .btn-3:hover { background-color: #218838; }
-        .btn-4:hover, .btn-5:hover, .btn-6:hover, .btn-7:hover { 
-            background-color: #6c3483;
+        /* TikTok - Black with movement */
+        .btn-2 {
+            background-color: #000000;
+            animation: twitchAnim 2s infinite; /* Adding MOV animation */
+        }
+
+        /* Trovo - Green with movement */
+        .btn-3 {
+            background-color: #28a745; /* Green base color */
+            animation: twitchAnim 2s infinite; /* Adding MOV animation */
+        }
+
+        /* Twitch - Purple with movement */
+        .btn-4 {
+            background-color: #800080; /* Purple base color */
+            animation: twitchAnim 2s infinite; /* Adding MOV animation */
+        }
+
+        /* DOBAROS SHOP (SITE) - Purple with movement */
+        .btn-5 {
+            background-color: #800080; /* Purple base color */
+            animation: twitchAnim 2s infinite; /* Adding MOV animation */
+        }
+
+        /* DOBAROS SHOP (DISCORD) - Purple with movement */
+        .btn-6 {
+            background-color: #800080; /* Purple base color */
+            animation: twitchAnim 2s infinite; /* Adding MOV animation */
+        }
+
+        /* DOBAROS COMMUNITY - Purple with movement */
+        .btn-7 {
+            background-color: #800080; /* Purple base color */
+            animation: twitchAnim 2s infinite; /* Adding MOV animation */
+        }
+
+        /* Animation for all buttons with movement */
+        @keyframes twitchAnim {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Add animation stop and shrink effect on hover */
+        .btn:hover {
+            animation-play-state: paused; /* Stop the animation */
+            transform: scale(0.9); /* Shrink the button */
+        }
+
+        /* Add scale effect when button is clicked */
+        .btn:active {
+            transform: scale(0.85); /* Shrink the button further when clicked */
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4); /* Add a stronger shadow */
         }
 
         /* Footer Styling */
@@ -117,41 +169,6 @@
             margin-top: 50px; /* Ensure space below the "DOBAROS.XYZ" button */
         }
 
-        /* Shadow Effect for "DOBAROS.XYZ" Button */
-        .button {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow to the button */
-        }
-
-        /* Contact Message Styling */
-        #contact-message {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #2c3e50;
-            display: none; /* Initially hidden */
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        #contact-message.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Image Styling - Adjusted position */
-        .image-container {
-            width: 100%;
-            margin: 100px auto 0; /* Increased top margin for more spacing */
-            display: block;
-            text-align: center; /* Center the image */
-        }
-
-        .image-container img {
-            width: 800px; /* Adjust size of the image */
-            height: auto;
-        }
-
         /* Contact Button (Fixed at the bottom) */
         .contact-button-container {
             position: fixed;
@@ -163,7 +180,7 @@
         /* Updated "Click Me" Button Styling */
         .contact-button-container button {
             padding: 15px 30px;
-            background-color: #3498db; /* Blue color */
+            background: linear-gradient(45deg, #00f260, #0575e6); /* Gradient color */
             color: white;
             font-size: 18px;
             border: none;
@@ -174,12 +191,30 @@
         }
 
         .contact-button-container button:hover {
-            background-color: #2980b9; /* Darker blue on hover */
+            background: linear-gradient(45deg, #0575e6, #00f260); /* Reverse gradient */
             transform: scale(1.1); /* Slight zoom effect on hover */
         }
 
         .contact-button-container button:active {
             transform: scale(0.95); /* Slight shrink on click */
+        }
+
+        /* Image Styling */
+        .image-container {
+            width: 100%;
+            margin: 150px auto 0; /* Increased top margin for more spacing */
+            display: block;
+            text-align: center; /* Center the image */
+        }
+
+        .image-container img {
+            width: 800px; /* Adjust size of the image */
+            height: auto;
+        }
+
+        /* Scale on hover for all buttons */
+        .btn:hover {
+            transform: scale(0.95); /* Shrink the button slightly */
         }
     </style>
 </head>
@@ -206,7 +241,7 @@
 
     <!-- Image Section -->
     <div class="image-container">
-        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67889453&is=678742d3&hm=e9817664d7d21487f031d60eebad5b613b7193da196e21ff9a73b8010e203821&" alt="DOBAROS LOGO">
+        <img src="images/dobaros-logo.gif" alt="DOBAROS LOGO">
     </div>
 
     <!-- Footer -->
