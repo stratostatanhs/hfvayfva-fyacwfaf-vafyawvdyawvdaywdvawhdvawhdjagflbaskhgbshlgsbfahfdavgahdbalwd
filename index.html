@@ -139,14 +139,17 @@
             transform: translateY(0);
         }
 
-        /* Image Styling - Increased size */
-        .contact-image {
-            width: 1000px; /* Increased size */
-            height: auto;
-            margin: 20px auto;
+        /* Image Styling - Adjusted position */
+        .image-container {
+            width: 100%;
+            margin: 100px auto 0; /* Increased top margin for more spacing */
             display: block;
-            position: relative;
-            top: 50px; /* Position image below the buttons */
+            text-align: center; /* Center the image */
+        }
+
+        .image-container img {
+            width: 800px; /* Adjust size of the image */
+            height: auto;
         }
 
         /* Contact Button (Fixed at the bottom) */
@@ -201,8 +204,9 @@
         <a href="https://discord.gg/4aB47DtUTc" class="btn btn-7">DOBAROS COMMUNITY</a>
     </div>
 
-   <div class="image-container">
-        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67849fd3&is=67834e53&hm=b8598baf9a48699811a5db6c3aa2a2ab71fd655e61a22c7fbc70cd0acf10ba1b&" alt="DOBAROS LOGO">
+    <!-- Image Section -->
+    <div class="image-container">
+        <img src="https://cdn.discordapp.com/attachments/1175513851647762604/1286373389602132009/standard_5.gif?ex=67889453&is=678742d3&hm=e9817664d7d21487f031d60eebad5b613b7193da196e21ff9a73b8010e203821&" alt="DOBAROS LOGO">
     </div>
 
     <!-- Footer -->
@@ -213,11 +217,6 @@
     <!-- Contact Button (Fixed at the bottom) -->
     <div class="contact-button-container">
         <button type="button" onclick="alert('EMAIL: totikogame@gmail.com :)')">EPIKINONIA</button>
-    </div>
-
-    <!-- Contact Message -->
-    <div id="contact-message">
-        EMAIL: totikogame@gmail.com :)
     </div>
 
 </body>
