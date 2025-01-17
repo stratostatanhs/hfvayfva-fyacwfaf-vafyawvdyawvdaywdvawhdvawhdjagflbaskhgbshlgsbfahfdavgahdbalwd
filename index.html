@@ -15,9 +15,21 @@
         /* Body and Font Styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #d3d3d3; /* Gray Background */
             text-align: center;
             padding-bottom: 50px; /* For space for footer */
+            transition: background-color 0.4s, color 0.4s;
+        }
+
+        /* Light Theme */
+        body.light-theme {
+            background-color: #d3d3d3; /* Gray Background */
+            color: black;
+        }
+
+        /* Dark Theme */
+        body.dark-theme {
+            background-color: #2a2a2a; /* Dark Background */
+            color: white;
         }
 
         /* Stylish Button */
@@ -176,9 +188,71 @@
             100% { transform: scale(1.1); }
         }
 
+        /* Theme Toggle Switch Styling */
+        .theme-checkbox {
+            --toggle-size: 16px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 6.25em;
+            height: 3.125em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+            background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+            background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+            background-size: 205%;
+            background-position: 0;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+            border-radius: 99em;
+            position: relative;
+            cursor: pointer;
+            font-size: var(--toggle-size);
+        }
+
+        .theme-checkbox::before {
+            content: "";
+            width: 2.25em;
+            height: 2.25em;
+            position: absolute;
+            top: 0.438em;
+            left: 0.438em;
+            background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+            background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+            background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+            background-size: 205%;
+            background-position: 100%;
+            border-radius: 50%;
+            -webkit-transition: 0.4s;
+            -o-transition: 0.4s;
+            transition: 0.4s;
+        }
+
+        .theme-checkbox:checked::before {
+            left: calc(100% - 2.25em - 0.438em);
+            background-position: 0;
+        }
+
+        .theme-checkbox:checked {
+            background-position: 100%;
+        }
+
+        /* Position the theme toggle button at the bottom right, but a bit higher */
+        .theme-toggle-container {
+            position: fixed;
+            bottom: 70px; /* Slightly above the footer */
+            right: 20px;
+        }
     </style>
 </head>
-<body>
+<body class="light-theme">
+
+    <!-- Theme Toggle Switch (Positioned bottom-right) -->
+    <div class="theme-toggle-container">
+        <label>
+            <input type="checkbox" class="theme-checkbox" id="theme-toggle">
+        </label>
+    </div>
 
     <!-- Site Header -->
     <header>
@@ -190,7 +264,7 @@
 
     <!-- Buttons Section -->
     <div class="buttons-container">
-        <a href="https://www.youtube.com/channel/UCgb0ziRZh6OVkvLz2sXRdrA" class="btn btn-1">YOUTUBE</a>
+       <a href="https://www.youtube.com/channel/UCgb0ziRZh6OVkvLz2sXRdrA" class="btn btn-1">YOUTUBE</a>
         <a href="https://www.tiktok.com/@_.stratooss" class="btn btn-2">TIK TOK</a>
         <a href="https://trovo.live/s/DOBAROS/228436558" class="btn btn-3">TROVO</a>
         <a href="https://www.twitch.tv/realdobaros" class="btn btn-4">TWITCH</a>
@@ -199,17 +273,28 @@
         <a href="https://discord.gg/4aB47DtUTc" class="btn btn-7">DOBAROS COMMUNITY</a>
     </div>
 
-    
-
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 DOBAROS.XYZ. All rights reserved.</p>
+        <p>© 2025 DOBAROS.XYZ</p>
     </footer>
 
-    <!-- Contact Button (Fixed at the bottom) -->
+    <!-- Contact Button -->
     <div class="contact-button-container">
-        <button type="button" onclick="alert('EMAIL: totikogame@gmail.com :)')">EPIKINONIA</button>
+        <button type="button" onclick="alert('EMAIL: totikogame@gmail.com :)')">ΕΠΙΚΟΙΝΩΝΙΑ</button>
     </div>
 
+    <!-- Script for Theme Toggle -->
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+        themeToggle.addEventListener("change", function() {
+            if (this.checked) {
+                document.body.classList.remove("light-theme");
+                document.body.classList.add("dark-theme");
+            } else {
+                document.body.classList.remove("dark-theme");
+                document.body.classList.add("light-theme");
+            }
+        });
+    </script>
 </body>
 </html>
